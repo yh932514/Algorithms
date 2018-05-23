@@ -2,7 +2,7 @@
 There are n positive integers, connecting them in a row to get a largest integer.
 For example, when n=3, the three integers are 13,312,343, and the largest concatenated integer is 34331213.
 For example, when n=4, 7,13,4,246, the largest concatenated integer is 7424613
-The following code only works for under 18 digits.
+The following code only works correctly for int under 18 digits.
 */
 #include <iostream>
 #include <vector>
