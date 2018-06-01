@@ -43,5 +43,5 @@ int get_length(int a){
         a/=10;
         l++;
     }
-    return l;
+    return 0;
 }
