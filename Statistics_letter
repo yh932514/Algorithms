@@ -1,0 +1,32 @@
+/*****************************
+//Given an string, find the letter that firstly appears three times in this string.
+//lower case and upper case is different in this question.
+//Example string: lnZ[)#8l6L9~?tN=t:iT_45>'(6YY"[5PV'#:s,Q0Zc79if]Z-r]yKs3}e3s`$evqGViV>
+//Output should be 'Z'
+*****************************/
+#include<iostream>
+#include <locale>
+#include<string>
+using namespace std;
+int main(){
+    string line;
+    locale loc;
+    getline(cin, line);
+    int alphabet[59]; //For containing all the repetitions of letters.
+ 
+    for(int i = 0; i < 59; i++) //Initializing letter array!
+        alphabet[i]=0;
+
+    for(size_t i=0; i<line.length(); i++){
+        if(isalpha(line[i])){
+        int index = (int)line[i]-65;
+        alphabet[index]++;}
+        for(int j = 0; j < 59; j++){
+            if(alphabet[j]==3){
+                int result = j+65;
+                cout<<(char)result;
+                exit(0);
+            }}
+    }
+    return 0;
+}
