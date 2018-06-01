@@ -1,0 +1,47 @@
+/***************************
+// Input two lines of number. First line is a int number，1 ≤ length(1st number) ≤ 50000.
+// The second line number is the number of digits that you wish to get rid of, cnt, 1 ≤ cnt < length(1st number)
+// Example, cin>>325>>1
+// Correct output is 35
+// The following code only works for int number, which is smaller or equal to 2147483647
+****************************/
+#include<iostream>
+#include<string>
+ 
+using namespace std;
+int get_length(int a);
+int main(){
+    int a, b, a2,p;
+    cin>>a>>b;    //a should be smaller or equal to 2147483647
+    int len=get_length(a);
+    int min =a%10;
+    a2= (a-min)/10;
+    p = len-1; //count from 0 
+ 
+    for(int j=0; j<b; j++){
+        if(b<=0)
+            break;
+        for(int i=len-2;i>=0;i--){
+            if(a2%10 < min){
+                min=a2%10;
+                a2 = (a2-min)/10;
+                p=i;}
+        }//find the minimum digit in the number
+        
+        string sa = to_string(a);
+        sa.erase(sa.end()-p - 1);
+        b--;
+        a=stoi(sa);
+    }
+    cout<<a;
+    return 0;
+}
+    
+int get_length(int a){
+    int l=0;
+    while(a){
+        a/=10;
+        l++;
+    }
+    return l;
+}
