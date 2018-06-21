@@ -1,0 +1,28 @@
+/***************************
+// grouping the input number make them become 6+8+4 pattern.
+// Eg: cin>>5021041988033084
+//     cout<<502104 19880330 84
+****************************/
+#include<iostream>
+#include<string>
+  
+using namespace std;
+string re(string a);
+int main(){
+    string a;
+    while(getline(cin,a)){
+        cout<<re(a)<<endl;
+    }
+    return 0;
+}
+
+string re(string a){
+    string b="";
+    for(int i=0; i<a.length(); i++){
+        if(i==6 || i==14){
+            b+=' ';}
+        if(a[i]!=' ')
+            b+=a[i];
+    }
+    return b;
+}
