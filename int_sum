@@ -1,0 +1,39 @@
+/*****************************
+//Input a line, which contains two value, the value's length is within [1,100]
+//Output a line, if both of the input values are number then display their sum; otherwise, cout<<"error";
+//E.g:cin>>123 123 cout<<246
+//cin>> abd 123 cout<< error
+//Note: stoi() throws 'out_of_range' for large number.
+/******************************
+#include<iostream>
+#include<string>
+#include <cstring>
+#include <locale>
+using namespace std;
+bool isn(string b);
+int main(){
+    string a,b,c; 
+    while (getline(cin, a)){
+        for(int i=0; i<a.length();i++){
+            if(a[i]!=' ')
+                b += a[i];
+            else{
+                for(int j=i+1; j<a.length();j++){
+                    c +=a[j];
+                }
+                break;}
+        }
+    }
+    if(isn(b)&&isn(c))
+        cout<<stoi(b)+stoi(c);
+    else
+        cout<<"error";
+    return 0;
+}
+
+bool isn(string b){
+    for(int i=0; i<b.length();i++){
+        if(!isdigit(b[i]))
+            return false;}
+    return true;
+}
